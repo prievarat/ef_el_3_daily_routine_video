@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Routine Master - English File Elementary (Unit 4B)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --- CSS VARIABLES (from Design Brief) --- */
+    :root {
+      --primary-300: #F9C97A;
+      --primary-500: #F4A329;
+      --primary-700: #B45309;
+      --secondary-300: #7EDAD6;
+      --secondary-500: #2BB6B4;
+      --secondary-700: #0F766E;
+      --accent-300: #F49DB8;
+      --accent-500: #E8467B;
+      --accent-700: #A61E4D;
+      --bg: #FFF7F2;
+      --surface: #FFFFFF;
+      --surface-alt: #F5F7FA;
+      --border: #E6E9EF;
+      --text: #1F2937;
+      --text-2: #4B5563;
+      --text-muted: #6B7280;
+      --text-inverse: #FFFFFF;
+      --success: #2F9E44;
+      --warning: #F59F00;
+      --error: #D92D20;
+      --info: #2563EB;
+
+      --font-main: "Inter", "Nunito", system-ui, -apple-system, sans-serif;
+      --radius-card: 16px;
+      --radius-pill: 9999px;
+      --radius-sm: 8px;
+      --shadow-card: 0 4px 14px rgba(17, 24, 39, 0.08);
+      --shadow-hover: 0 6px 20px rgba(17, 24, 39, 0.12);
+      --transition: 180ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- LAYOUT & CONTAINER --- */
+    .container {
+      max-width: 1050px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 24px;
+      }
+    }
+
+    /* --- HEADER --- */
+    header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(17, 24, 39, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .header-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+      color: var(--text-inverse);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .brand-title h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-700);
+      line-height: 1.2;
+    }
+
+    .brand-title p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      background-color: var(--surface-alt);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+    }
+
+    .badge-primary {
+      background-color: rgba(249, 201, 122, 0.25);
+      color: var(--primary-700);
+      border-color: var(--primary-300);
+    }
+
+    /* --- NAVIGATION TABS --- */
+    nav.nav-tabs {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      border-bottom: 2px solid var(--border);
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 10px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary-700);
+      background-color: rgba(249, 201, 122, 0.15);
+    }
+
+    .tab-btn.active {
+      color: var(--primary-700);
+      border-bottom-color: var(--primary-700);
+      background-color: var(--surface);
+    }
+
+    .tab-badge {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      background: var(--surface-alt);
+      color: var(--text-muted);
+    }
+
+    .tab-btn.active .tab-badge {
+      background: var(--primary-300);
+      color: var(--primary-700);
+    }
+
+    /* --- CARDS & PANELS --- */
+    .card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        padding: 24px;
+      }
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-2);
+      margin-bottom: 18px;
+    }
+
+    /* --- BUTTONS --- */
+    .btn {
+      font-family: var(--font-main);
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-700);
+      color: var(--text-inverse);
+      border-color: var(--primary-700);
+    }
+
+    .btn-primary:not(:disabled):hover {
+      filter: brightness(95%);
+      box-shadow: 0 2px 8px rgba(180, 83, 9, 0.25);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary-700);
+      border-color: var(--primary-300);
+    }
+
+    .btn-secondary:not(:disabled):hover {
+      background-color: rgba(249, 201, 122, 0.24);
+    }
+
+    .btn-teal {
+      background-color: var(--secondary-700);
+      color: var(--text-inverse);
+      border-color: var(--secondary-700);
+    }
+
+    .btn-teal:not(:disabled):hover {
+      filter: brightness(95%);
+      box-shadow: 0 2px 8px rgba(15, 118, 110, 0.25);
+    }
+
+    .btn-sm {
+      padding: 4px 10px;
+      font-size: 13px;
+    }
+
+    .actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    /* --- ACTIVITY 1: DRAG & DROP SORTER --- */
+    .sortable-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .sortable-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background-color: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      cursor: grab;
+      user-select: none;
+      transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .sortable-item:active {
+      cursor: grabbing;
+    }
+
+    .sortable-item.dragging {
+      opacity: 0.4;
+      background-color: var(--surface-alt);
+      border: 2px dashed var(--primary-500);
+    }
+
+    .sortable-item.correct {
+      border-color: var(--success);
+      background-color: #f1fbf3;
+    }
+
+    .sortable-item.incorrect {
+      border-color: var(--error);
+      background-color: #fdf2f2;
+    }
+
+    .item-handle {
+      color: var(--text-muted);
+      cursor: grab;
+      font-size: 18px;
+      line-height: 1;
+      padding: 2px;
+    }
+
+    .item-index {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-pill);
+      background-color: var(--surface-alt);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-2);
+      flex-shrink: 0;
+    }
+
+    .sortable-item.correct .item-index {
+      background-color: var(--success);
+      color: var(--text-inverse);
+      border-color: var(--success);
+    }
+
+    .item-text {
+      flex-grow: 1;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .item-controls {
+      display: flex;
+      gap: 4px;
+    }
+
+    .ctrl-btn {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-2);
+      transition: var(--transition);
+    }
+
+    .ctrl-btn:hover {
+      background-color: var(--primary-300);
+      color: var(--primary-700);
+      border-color: var(--primary-500);
+    }
+
+    .item-status-icon {
+      font-size: 18px;
+      margin-left: 6px;
+      display: none;
+    }
+
+    .sortable-item.correct .item-status-icon {
+      display: inline-block;
+      color: var(--success);
+    }
+
+    .sortable-item.incorrect .item-status-icon {
+      display: inline-block;
+      color: var(--error);
+    }
+
+    /* --- ACTIVITY 2: SENTENCE RECONSTRUCTION --- */
+    .trainer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: var(--surface-alt);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secondary-500), var(--primary-500));
+      width: 0%;
+      transition: width 300ms ease;
+    }
+
+    .prompt-box {
+      background-color: var(--surface-alt);
+      border: 2px solid var(--secondary-300);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .prompt-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      color: var(--secondary-700);
+      margin-bottom: 4px;
+    }
+
+    .prompt-phrase {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: var(--font-main);
+      font-size: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background-color: var(--surface);
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .text-input:focus {
+      outline: 2px solid var(--secondary-500);
+      border-color: var(--secondary-500);
+    }
+
+    .feedback-msg {
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 24px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feedback-msg.success { color: var(--success); }
+    .feedback-msg.error { color: var(--error); }
+    .feedback-msg.hint { color: var(--info); }
+
+    /* --- ACTIVITY 3: 3-LEVEL CLOZE GAP FILL --- */
+    .level-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .level-pill {
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--surface-alt);
+      border: 1.5px solid var(--border);
+      color: var(--text-2);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .level-pill:hover {
+      border-color: var(--secondary-500);
+      color: var(--secondary-700);
+    }
+
+    .level-pill.active {
+      background: var(--secondary-700);
+      color: var(--text-inverse);
+      border-color: var(--secondary-700);
+    }
+
+    .cloze-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cloze-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .cloze-sentence-wrapper {
+      font-size: 17px;
+      color: var(--text);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      line-height: 2.2;
+    }
+
+    .cloze-number {
+      font-weight: 700;
+      color: var(--primary-700);
+      min-width: 24px;
+    }
+
+    .gap-input {
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface-alt);
+      color: var(--text);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .gap-input:focus {
+      outline: 2px solid var(--secondary-500);
+      border-color: var(--secondary-500);
+      background: #ffffff;
+    }
+
+    .gap-input.correct {
+      border-color: var(--success);
+      background-color: #eaf8ec;
+      color: var(--success);
+    }
+
+    .gap-input.incorrect {
+      border-color: var(--error);
+      background-color: #fdeeee;
+      color: var(--error);
+    }
+
+    /* --- TOAST / MESSAGE BOX (No alert()) --- */
+    #message-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      max-width: 360px;
+      background: var(--surface);
+      border: 2px solid var(--secondary-500);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(120%);
+      transition: transform 250ms ease;
+      z-index: 100;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    #message-toast.show {
+      transform: translateY(0);
+    }
+
+    #message-toast.success {
+      border-color: var(--success);
+      background-color: #f6fcf7;
+      color: var(--success);
+    }
+
+    #message-toast.info {
+      border-color: var(--info);
+      background-color: #f3f7fd;
+      color: var(--info);
+    }
+
+    /* --- PEDAGOGICAL DRAWER (Teacher Corner) --- */
+    .drawer-toggle {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 50;
+      background: var(--primary-700);
+      color: var(--text-inverse);
+      box-shadow: var(--shadow-card);
+      border-radius: var(--radius-pill);
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .drawer-toggle:hover {
+      filter: brightness(95%);
+    }
+
+    .teacher-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 41, 55, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .teacher-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .teacher-modal-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .teacher-modal-card h2 {
+      font-size: 22px;
+      color: var(--primary-700);
+      margin-bottom: 12px;
+    }
+
+    .teacher-modal-card p, .teacher-modal-card li {
+      font-size: 15px;
+      color: var(--text-2);
+      margin-bottom: 8px;
+    }
+
+    .teacher-modal-card ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">4B</div>
+        <div class="brand-title">
+          <h1>Daily Routine Master</h1>
+          <p>Scaffolded English File Elementary Routine Lab</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-primary">A2 Elementary</span>
+        <span class="badge">Present Simple &amp; Routines</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Activity Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tab-sorter" role="tab">
+        <span>1. Chrono-Sorter</span>
+        <span class="tab-badge">Drag &amp; Drop</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-sentences" role="tab">
+        <span>2. Sentence Builder</span>
+        <span class="tab-badge" id="reconstruct-badge">0/10</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-cloze" role="tab">
+        <span>3. 3-Level Gap Fill</span>
+        <span class="tab-badge">Scaffolded</span>
+      </button>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- ACTIVITY 1: CHRONOLOGICAL ROUTINE SORTER   -->
+    <!-- ========================================== -->
+    <section id="tab-sorter" class="card tab-panel" role="tabpanel">
+      <h2 class="section-title">🌅 Daily Routine Chrono-Sorter</h2>
+      <p class="section-subtitle">
+        Her daily activities are all mixed up! Drag and drop the verb phrases into the correct chronological order from morning to night. You can also use the up/down arrows on mobile.
+      </p>
+
+      <ul class="sortable-list" id="sorter-list">
+        <!-- Dynamically rendered sorted items -->
+      </ul>
+
+      <div class="actions-bar">
+        <button class="btn btn-primary" id="check-order-btn">
+          <span>✓ Check Order</span>
+        </button>
+        <button class="btn btn-secondary" id="reshuffle-order-btn">
+          <span>↻ Reshuffle</span>
+        </button>
+        <button class="btn btn-secondary" id="solution-order-btn">
+          <span>💡 Show Correct Order</span>
+        </button>
+        <span id="sorter-score" style="font-weight: 700; margin-left: auto; color: var(--text-2);"></span>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ACTIVITY 2: SENTENCE RECONSTRUCTION           -->
+    <!-- ============================================== -->
+    <section id="tab-sentences" class="card tab-panel" style="display: none;" role="tabpanel">
+      <h2 class="section-title">✍️ Sentence Builder: From Verb Phrase to Full Sentence</h2>
+      <p class="section-subtitle">
+        Transform the given base verb phrase into the original 3rd person singular Present Simple sentence from her day. Remember 3rd person <strong>-s</strong> and capital letters!
+      </p>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="recon-progress"></div>
+      </div>
+
+      <div class="trainer-header">
+        <span class="badge badge-primary" id="recon-step-indicator">Item 1 of 10</span>
+        <span class="badge" id="recon-score-indicator">Score: 0 / 10</span>
+      </div>
+
+      <div class="prompt-box">
+        <div class="prompt-label">Target Verb Phrase</div>
+        <div class="prompt-phrase" id="recon-target-phrase">wake up at 7:00</div>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="recon-user-input" style="display:block; font-size:14px; font-weight:600; margin-bottom:6px;">
+          Type the complete sentence (e.g. She wakes up...):
+        </label>
+        <input 
+          type="text" 
+          id="recon-user-input" 
+          class="text-input" 
+          placeholder="Type the sentence here..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+      </div>
+
+      <div id="recon-feedback" class="feedback-msg"></div>
+
+      <div class="actions-bar">
+        <button class="btn btn-primary" id="recon-check-btn">Check Sentence</button>
+        <button class="btn btn-secondary" id="recon-hint-btn">Get Hint</button>
+        <button class="btn btn-secondary" id="recon-show-btn">Show Answer</button>
+        <button class="btn btn-teal" id="recon-next-btn" style="margin-left: auto;">Next Item →</button>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ACTIVITY 3: 3-LEVEL CLOZE GAP FILL         -->
+    <!-- ========================================== -->
+    <section id="tab-cloze" class="card tab-panel" style="display: none;" role="tabpanel">
+      <h2 class="section-title">🧩 3-Level Scaffolded Cloze</h2>
+      <p class="section-subtitle">
+        Fill in the missing words from her day. Select a challenge level to test your recall of verbs, particles, and prepositions.
+      </p>
+
+      <div class="level-selector">
+        <button class="level-pill active" data-level="1">Level 1: Missing Main Verb (1 Gap)</button>
+        <button class="level-pill" data-level="2">Level 2: Verb + Word (2 Gaps)</button>
+        <button class="level-pill" data-level="3">Level 3: Full Phrase (3 Gaps)</button>
+      </div>
+
+      <div class="cloze-list" id="cloze-list-container">
+        <!-- Dynamically rendered gap fill sentences -->
+      </div>
+
+      <div class="actions-bar">
+        <button class="btn btn-primary" id="cloze-check-btn">Check Gaps</button>
+        <button class="btn btn-secondary" id="cloze-show-all-btn">Show Solution</button>
+        <button class="btn btn-secondary" id="cloze-reset-btn">Reset Gaps</button>
+        <span id="cloze-score" style="font-weight: 700; margin-left: auto; color: var(--text-2);"></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Message Toast -->
+  <div id="message-toast" role="status" aria-live="polite"></div>
+
+  <!-- Teacher's Drawer Button -->
+  <button class="drawer-toggle" id="teacher-drawer-btn" title="View Teacher's Pedagogical Notes">
+    <span>🎓 Teacher's Note</span>
+  </button>
+
+  <!-- Teacher's Note Modal -->
+  <div class="teacher-modal" id="teacher-modal">
+    <div class="teacher-modal-card card">
+      <h2>Teacher's Pedagogical Guide</h2>
+      <p><strong>Lesson Target:</strong> English File Elementary 4B (Daily Routine, Present Simple 3rd person singular -s/-es, Time Prepositions at/in/from...to).</p>
+      
+      <ul>
+        <li><strong>Activity 1 (Chrono-Sorter):</strong> Active schemata activation. Students process lexical chunks (verb phrases) and logically reconstruct the chronology of the day, decoupling grammar anxiety from semantic sequencing.</li>
+        <li><strong>Activity 2 (Sentence Builder):</strong> Controlled productive transformation. Moves students from the non-finite base verb phrase (<em>"make breakfast"</em>) to third-person singular syntax (<em>"After yoga, she makes breakfast."</em>).</li>
+        <li><strong>Activity 3 (Scaffolded Cloze):</strong> Three distinct cognitive tiers:
+          <br>• <em>Level 1:</em> Lexical verb agreement (verbs only: <em>wakes</em>, <em>makes</em>, <em>drinks</em>).
+          <br>• <em>Level 2:</em> Phrasal verbs and collocations (<em>wakes up</em>, <em>makes breakfast</em>).
+          <br>• <em>Level 3:</em> Functional discourse &amp; time prepositions (<em>at</em>, <em>from</em>, <em>after</em>).
+        </li>
+      </ul>
+
+      <div style="text-align: right; margin-top: 16px;">
+        <button class="btn btn-primary btn-sm" id="close-teacher-modal">Got it, close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =====================================================================
+       CURRICULAR DATA: ROUTINE CHUNKS AND TARGET SENTENCES
+       ===================================================================== */
+    const ROUTINE_DATA = [
+      {
+        id: 1,
+        order: 1,
+        verbPhrase: "wake up at 7:00",
+        sentence: "She wakes up at 7:00.",
+        // For Gap fills
+        gapsLevel1: [{ word: "wakes", index: 1 }],
+        gapsLevel2: [{ word: "wakes", index: 1 }, { word: "up", index: 2 }],
+        gapsLevel3: [{ word: "wakes", index: 1 }, { word: "up", index: 2 }, { word: "at", index: 3 }],
+        words: ["She", "wakes", "up", "at", "7:00."]
+      },
+      {
+        id: 2,
+        order: 2,
+        verbPhrase: "make breakfast",
+        sentence: "After yoga, she makes breakfast.",
+        gapsLevel1: [{ word: "makes", index: 3 }],
+        gapsLevel2: [{ word: "makes", index: 3 }, { word: "breakfast.", index: 4 }],
+        gapsLevel3: [{ word: "After", index: 0 }, { word: "makes", index: 3 }, { word: "breakfast.", index: 4 }],
+        words: ["After", "yoga,", "she", "makes", "breakfast."]
+      },
+      {
+        id: 3,
+        order: 3,
+        verbPhrase: "drink tea for breakfast",
+        sentence: "She drinks tea for breakfast.",
+        gapsLevel1: [{ word: "drinks", index: 1 }],
+        gapsLevel2: [{ word: "drinks", index: 1 }, { word: "tea", index: 2 }],
+        gapsLevel3: [{ word: "drinks", index: 1 }, { word: "tea", index: 2 }, { word: "for", index: 3 }],
+        words: ["She", "drinks", "tea", "for", "breakfast."]
+      },
+      {
+        id: 4,
+        order: 4,
+        verbPhrase: "take a bicycle to work",
+        sentence: "She takes a bicycle to work.",
+        gapsLevel1: [{ word: "takes", index: 1 }],
+        gapsLevel2: [{ word: "takes", index: 1 }, { word: "bicycle", index: 3 }],
+        gapsLevel3: [{ word: "takes", index: 1 }, { word: "bicycle", index: 3 }, { word: "to", index: 4 }],
+        words: ["She", "takes", "a", "bicycle", "to", "work."]
+      },
+      {
+        id: 5,
+        order: 5,
+        verbPhrase: "start work at 10:00",
+        sentence: "She starts work at 10:00.",
+        gapsLevel1: [{ word: "starts", index: 1 }],
+        gapsLevel2: [{ word: "starts", index: 1 }, { word: "work", index: 2 }],
+        gapsLevel3: [{ word: "starts", index: 1 }, { word: "work", index: 2 }, { word: "at", index: 3 }],
+        words: ["She", "starts", "work", "at", "10:00."]
+      },
+      {
+        id: 6,
+        order: 6,
+        verbPhrase: "finish work at 2:00 PM",
+        sentence: "She finishes work at 2:00 PM.",
+        gapsLevel1: [{ word: "finishes", index: 1 }],
+        gapsLevel2: [{ word: "finishes", index: 1 }, { word: "work", index: 2 }],
+        gapsLevel3: [{ word: "finishes", index: 1 }, { word: "work", index: 2 }, { word: "at", index: 3 }],
+        words: ["She", "finishes", "work", "at", "2:00", "PM."]
+      },
+      {
+        id: 7,
+        order: 7,
+        verbPhrase: "eat lunch at the university",
+        sentence: "She eats lunch at the university.",
+        gapsLevel1: [{ word: "eats", index: 1 }],
+        gapsLevel2: [{ word: "eats", index: 1 }, { word: "lunch", index: 2 }],
+        gapsLevel3: [{ word: "eats", index: 1 }, { word: "lunch", index: 2 }, { word: "at", index: 3 }],
+        words: ["She", "eats", "lunch", "at", "the", "university."]
+      },
+      {
+        id: 8,
+        order: 8,
+        verbPhrase: "have classes from 4:00 to 8:00 PM",
+        sentence: "She has classes from 4:00 to 8:00 PM.",
+        gapsLevel1: [{ word: "has", index: 1 }],
+        gapsLevel2: [{ word: "has", index: 1 }, { word: "classes", index: 2 }],
+        gapsLevel3: [{ word: "has", index: 1 }, { word: "classes", index: 2 }, { word: "from", index: 3 }],
+        words: ["She", "has", "classes", "from", "4:00", "to", "8:00", "PM."]
+      },
+      {
+        id: 9,
+        order: 9,
+        verbPhrase: "read a book before she goes to bed",
+        sentence: "She reads a book before she goes to bed.",
+        gapsLevel1: [{ word: "reads", index: 1 }],
+        gapsLevel2: [{ word: "reads", index: 1 }, { word: "book", index: 3 }],
+        gapsLevel3: [{ word: "reads", index: 1 }, { word: "before", index: 4 }, { word: "goes", index: 6 }],
+        words: ["She", "reads", "a", "book", "before", "she", "goes", "to", "bed."]
+      },
+      {
+        id: 10,
+        order: 10,
+        verbPhrase: "fall asleep at 11:00 PM",
+        sentence: "She falls asleep at 11:00 PM.",
+        gapsLevel1: [{ word: "falls", index: 1 }],
+        gapsLevel2: [{ word: "falls", index: 1 }, { word: "asleep", index: 2 }],
+        gapsLevel3: [{ word: "falls", index: 1 }, { word: "asleep", index: 2 }, { word: "at", index: 3 }],
+        words: ["She", "falls", "asleep", "at", "11:00", "PM."]
+      }
+    ];
+
+    /* --- TOAST SYSTEM (NON-BLOCKING) --- */
+    function showToast(message, type = 'info') {
+      const toast = document.getElementById('message-toast');
+      toast.textContent = message;
+      toast.className = '';
+      toast.classList.add(type);
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    /* --- TAB SWITCHING --- */
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.style.display = 'none');
+
+        btn.classList.add('active');
+        const targetId = btn.dataset.tab;
+        const panel = document.getElementById(targetId);
+        if (panel) {
+          panel.style.display = 'block';
+        }
+      });
+    });
+
+    /* =====================================================================
+       ACTIVITY 1: CHRONO-SORTER LOGIC (HTML5 DND + MOBILE CONTROLS)
+       ===================================================================== */
+    let currentSorterList = [];
+
+    function initSorter(shuffle = true) {
+      if (shuffle) {
+        // Create a randomized copy that isn't trivially in order
+        let shuffled = [...ROUTINE_DATA];
+        do {
+          shuffled = shuffled.sort(() => Math.random() - 0.5);
+        } while (shuffled.every((item, i) => item.order === i + 1));
+        currentSorterList = shuffled;
+      }
+
+      renderSorter();
+      document.getElementById('sorter-score').textContent = '';
+    }
+
+    function renderSorter() {
+      const listEl = document.getElementById('sorter-list');
+      listEl.innerHTML = '';
+
+      currentSorterList.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'sortable-item';
+        li.draggable = true;
+        li.dataset.id = item.id;
+        li.dataset.index = index;
+
+        li.innerHTML = `
+          <span class="item-handle" title="Drag to reorder">⋮⋮</span>
+          <span class="item-index">${index + 1}</span>
+          <span class="item-text">${item.verbPhrase}</span>
+          <div class="item-controls">
+            <button class="ctrl-btn btn-up" title="Move Up" ${index === 0 ? 'disabled' : ''}>▲</button>
+            <button class="ctrl-btn btn-down" title="Move Down" ${index === currentSorterList.length - 1 ? 'disabled' : ''}>▼</button>
+          </div>
+          <span class="item-status-icon"></span>
+        `;
+
+        // Mobile button reordering
+        li.querySelector('.btn-up').addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (index > 0) {
+            const temp = currentSorterList[index];
+            currentSorterList[index] = currentSorterList[index - 1];
+            currentSorterList[index - 1] = temp;
+            renderSorter();
+          }
+        });
+
+        li.querySelector('.btn-down').addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (index < currentSorterList.length - 1) {
+            const temp = currentSorterList[index];
+            currentSorterList[index] = currentSorterList[index + 1];
+            currentSorterList[index + 1] = temp;
+            renderSorter();
+          }
+        });
+
+        // Drag and Drop listeners
+        li.addEventListener('dragstart', handleDragStart);
+        li.addEventListener('dragover', handleDragOver);
+        li.addEventListener('dragenter', handleDragEnter);
+        li.addEventListener('dragleave', handleDragLeave);
+        li.addEventListener('drop', handleDrop);
+        li.addEventListener('dragend', handleDragEnd);
+
+        listEl.appendChild(li);
+      });
+    }
+
+    let dragSrcIndex = null;
+
+    function handleDragStart(e) {
+      this.classList.add('dragging');
+      dragSrcIndex = Number(this.dataset.index);
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', dragSrcIndex);
+    }
+
+    function handleDragOver(e) {
+      if (e.preventDefault) e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      return false;
+    }
+
+    function handleDragEnter() {
+      this.style.borderColor = 'var(--primary-700)';
+    }
+
+    function handleDragLeave() {
+      this.style.borderColor = 'var(--border)';
+    }
+
+    function handleDrop(e) {
+      if (e.stopPropagation) e.stopPropagation();
+      const targetIndex = Number(this.dataset.index);
+
+      if (dragSrcIndex !== null && dragSrcIndex !== targetIndex) {
+        const movedItem = currentSorterList.splice(dragSrcIndex, 1)[0];
+        currentSorterList.splice(targetIndex, 0, movedItem);
+        renderSorter();
+      }
+      return false;
+    }
+
+    function handleDragEnd() {
+      this.classList.remove('dragging');
+      document.querySelectorAll('.sortable-item').forEach(item => {
+        item.style.borderColor = 'var(--border)';
+      });
+    }
+
+    // Check Button
+    document.getElementById('check-order-btn').addEventListener('click', () => {
+      let correctCount = 0;
+      const items = document.querySelectorAll('#sorter-list .sortable-item');
+
+      items.forEach((itemEl, idx) => {
+        const itemId = Number(itemEl.dataset.id);
+        const expectedOrder = idx + 1;
+        const iconEl = itemEl.querySelector('.item-status-icon');
+
+        if (itemId === expectedOrder) {
+          itemEl.classList.remove('incorrect');
+          itemEl.classList.add('correct');
+          iconEl.textContent = '✓';
+          correctCount++;
+        } else {
+          itemEl.classList.remove('correct');
+          itemEl.classList.add('incorrect');
+          iconEl.textContent = '✕';
+        }
+      });
+
+      const scoreEl = document.getElementById('sorter-score');
+      scoreEl.textContent = `${correctCount} / 10 in correct position`;
+
+      if (correctCount === 10) {
+        scoreEl.style.color = 'var(--success)';
+        showToast('🎉 Perfect! Her whole routine is accurately ordered!', 'success');
+      } else {
+        scoreEl.style.color = 'var(--text-2)';
+        showToast(`${correctCount} correct. Adjust the red items to fix her day!`, 'info');
+      }
+    });
+
+    // Reshuffle Button
+    document.getElementById('reshuffle-order-btn').addEventListener('click', () => {
+      initSorter(true);
+      showToast('Phrases have been re-randomized.', 'info');
+    });
+
+    // Show Solution
+    document.getElementById('solution-order-btn').addEventListener('click', () => {
+      currentSorterList = [...ROUTINE_DATA].sort((a, b) => a.order - b.order);
+      renderSorter();
+      document.querySelectorAll('#sorter-list .sortable-item').forEach(item => {
+        item.classList.add('correct');
+        item.querySelector('.item-status-icon').textContent = '✓';
+      });
+      document.getElementById('sorter-score').textContent = '10 / 10 Solution Displayed';
+      showToast('Solution loaded chronologically.', 'info');
+    });
+
+    /* =====================================================================
+       ACTIVITY 2: SENTENCE BUILDER / RECONSTRUCTION LOGIC
+       ===================================================================== */
+    let currentReconIndex = 0;
+    const completedRecon = new Set();
+
+    function updateReconUI() {
+      const currentItem = ROUTINE_DATA[currentReconIndex];
+      document.getElementById('recon-step-indicator').textContent = `Sentence ${currentReconIndex + 1} of 10`;
+      document.getElementById('recon-target-phrase').textContent = currentItem.verbPhrase;
+      
+      const inputEl = document.getElementById('recon-user-input');
+      inputEl.value = '';
+      inputEl.focus();
+
+      const feedbackEl = document.getElementById('recon-feedback');
+      feedbackEl.textContent = '';
+      feedbackEl.className = 'feedback-msg';
+
+      const progress = (completedRecon.size / ROUTINE_DATA.length) * 100;
+      document.getElementById('recon-progress').style.width = `${progress}%`;
+      document.getElementById('recon-score-indicator').textContent = `Mastered: ${completedRecon.size} / 10`;
+      document.getElementById('reconstruct-badge').textContent = `${completedRecon.size}/10`;
+    }
+
+    function normalizeText(text) {
+      return text.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[.]+$/, '');
+    }
+
+    function checkSentenceReconstruction() {
+      const inputEl = document.getElementById('recon-user-input');
+      const feedbackEl = document.getElementById('recon-feedback');
+      const expected = ROUTINE_DATA[currentReconIndex].sentence;
+
+      const userVal = normalizeText(inputEl.value);
+      const targetVal = normalizeText(expected);
+
+      if (!userVal) {
+        feedbackEl.className = 'feedback-msg error';
+        feedbackEl.textContent = 'Please type a sentence before checking.';
+        return;
+      }
+
+      if (userVal === targetVal) {
+        feedbackEl.className = 'feedback-msg success';
+        feedbackEl.innerHTML = `✓ Excellent! "<em>${expected}</em>" is correct.`;
+        completedRecon.add(currentReconIndex);
+        
+        const progress = (completedRecon.size / ROUTINE_DATA.length) * 100;
+        document.getElementById('recon-progress').style.width = `${progress}%`;
+        document.getElementById('recon-score-indicator').textContent = `Mastered: ${completedRecon.size} / 10`;
+        document.getElementById('reconstruct-badge').textContent = `${completedRecon.size}/10`;
+
+        if (completedRecon.size === ROUTINE_DATA.length) {
+          showToast('🎉 Bravo! You have reconstructed all 10 sentences!', 'success');
+        }
+      } else {
+        feedbackEl.className = 'feedback-msg error';
+        feedbackEl.innerHTML = `✕ Not quite. Check 3rd person singular '-s' and word order.`;
+      }
+    }
+
+    document.getElementById('recon-check-btn').addEventListener('click', checkSentenceReconstruction);
+
+    document.getElementById('recon-user-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        checkSentenceReconstruction();
+      }
+    });
+
+    document.getElementById('recon-hint-btn').addEventListener('click', () => {
+      const expected = ROUTINE_DATA[currentReconIndex].sentence;
+      const feedbackEl = document.getElementById('recon-feedback');
+      feedbackEl.className = 'feedback-msg hint';
+      // First 2 words as hint
+      const words = expected.split(' ');
+      const hint = words.slice(0, 2).join(' ') + ' ...';
+      feedbackEl.innerHTML = `💡 Hint: Begins with "<strong>${hint}</strong>"`;
+    });
+
+    document.getElementById('recon-show-btn').addEventListener('click', () => {
+      const expected = ROUTINE_DATA[currentReconIndex].sentence;
+      const inputEl = document.getElementById('recon-user-input');
+      inputEl.value = expected;
+      const feedbackEl = document.getElementById('recon-feedback');
+      feedbackEl.className = 'feedback-msg info';
+      feedbackEl.textContent = `Solution filled in: "${expected}"`;
+    });
+
+    document.getElementById('recon-next-btn').addEventListener('click', () => {
+      currentReconIndex = (currentReconIndex + 1) % ROUTINE_DATA.length;
+      updateReconUI();
+    });
+
+    /* =====================================================================
+       ACTIVITY 3: 3-LEVEL CLOZE GAP FILL LOGIC
+       ===================================================================== */
+    let currentClozeLevel = 1;
+
+    const levelPills = document.querySelectorAll('.level-pill');
+    levelPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        levelPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentClozeLevel = Number(pill.dataset.level);
+        renderClozeActivity();
+      });
+    });
+
+    function cleanPunctuation(str) {
+      return str.replace(/[.,:;!?]/g, '').trim().toLowerCase();
+    }
+
+    function renderClozeActivity() {
+      const container = document.getElementById('cloze-list-container');
+      container.innerHTML = '';
+      document.getElementById('cloze-score').textContent = '';
+
+      ROUTINE_DATA.forEach((item, sIndex) => {
+        const card = document.createElement('div');
+        card.className = 'cloze-card';
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'cloze-sentence-wrapper';
+
+        // Index number
+        const numSpan = document.createElement('span');
+        numSpan.className = 'cloze-number';
+        numSpan.textContent = `${sIndex + 1}.`;
+        wrapper.appendChild(numSpan);
+
+        // Determine gaps depending on current level
+        let gapsConfig = [];
+        if (currentClozeLevel === 1) gapsConfig = item.gapsLevel1;
+        else if (currentClozeLevel === 2) gapsConfig = item.gapsLevel2;
+        else gapsConfig = item.gapsLevel3;
+
+        const gapIndices = new Set(gapsConfig.map(g => g.index));
+
+        item.words.forEach((wordToken, wIndex) => {
+          if (gapIndices.has(wIndex)) {
+            // Check trailing punctuation on token
+            const matchPunct = wordToken.match(/([.,:;!?]+)$/);
+            const punctuation = matchPunct ? matchPunct[1] : '';
+            const pureTarget = wordToken.replace(/([.,:;!?]+)$/, '');
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'gap-input';
+            input.dataset.target = pureTarget;
+            input.dataset.sentence = sIndex;
+            input.dataset.wordIndex = wIndex;
+            // Set dynamic width based on target length
+            input.style.width = `${Math.max(pureTarget.length * 13 + 16, 60)}px`;
+            input.autocomplete = 'off';
+            input.spellcheck = false;
+
+            // Auto-advance focus to next input on Enter
+            input.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter') {
+                const allInputs = Array.from(document.querySelectorAll('.gap-input'));
+                const currentIndex = allInputs.indexOf(input);
+                if (currentIndex >= 0 && currentIndex < allInputs.length - 1) {
+                  allInputs[currentIndex + 1].focus();
+                } else {
+                  checkClozeActivity();
+                }
+              }
+            });
+
+            wrapper.appendChild(input);
+
+            if (punctuation) {
+              const punctSpan = document.createElement('span');
+              punctSpan.textContent = punctuation;
+              wrapper.appendChild(punctSpan);
+            }
+          } else {
+            const wordSpan = document.createElement('span');
+            wordSpan.textContent = wordToken;
+            wrapper.appendChild(wordSpan);
+          }
+        });
+
+        card.appendChild(wrapper);
+        container.appendChild(card);
+      });
+    }
+
+    function checkClozeActivity() {
+      const inputs = document.querySelectorAll('.gap-input');
+      let correct = 0;
+      let total = inputs.length;
+
+      inputs.forEach(input => {
+        const expected = cleanPunctuation(input.dataset.target);
+        const val = cleanPunctuation(input.value);
+
+        if (val === expected) {
+          input.classList.remove('incorrect');
+          input.classList.add('correct');
+          correct++;
+        } else {
+          input.classList.remove('correct');
+          input.classList.add('incorrect');
+        }
+      });
+
+      const scoreEl = document.getElementById('cloze-score');
+      scoreEl.textContent = `Score: ${correct} / ${total}`;
+
+      if (correct === total) {
+        scoreEl.style.color = 'var(--success)';
+        showToast(`🎉 Outstanding! All gaps correct for Level ${currentClozeLevel}!`, 'success');
+      } else {
+        scoreEl.style.color = 'var(--text-2)';
+        showToast(`${correct} of ${total} gaps correct. Review the highlighted fields.`, 'info');
+      }
+    }
+
+    document.getElementById('cloze-check-btn').addEventListener('click', checkClozeActivity);
+
+    document.getElementById('cloze-show-all-btn').addEventListener('click', () => {
+      const inputs = document.querySelectorAll('.gap-input');
+      inputs.forEach(input => {
+        input.value = input.dataset.target;
+        input.classList.remove('incorrect');
+        input.classList.add('correct');
+      });
+      document.getElementById('cloze-score').textContent = `Solution revealed`;
+      showToast('All answers revealed for this level.', 'info');
+    });
+
+    document.getElementById('cloze-reset-btn').addEventListener('click', () => {
+      renderClozeActivity();
+      showToast('Inputs cleared.', 'info');
+    });
+
+    /* --- TEACHER MODAL EVENT LISTENERS --- */
+    const teacherModal = document.getElementById('teacher-modal');
+    document.getElementById('teacher-drawer-btn').addEventListener('click', () => {
+      teacherModal.classList.add('open');
+    });
+
+    document.getElementById('close-teacher-modal').addEventListener('click', () => {
+      teacherModal.classList.remove('open');
+    });
+
+    teacherModal.addEventListener('click', (e) => {
+      if (e.target === teacherModal) {
+        teacherModal.classList.remove('open');
+      }
+    });
+
+    /* --- INITIALIZE ALL ACTIVITIES ON LOAD --- */
+    window.addEventListener('DOMContentLoaded', () => {
+      initSorter(true);
+      updateReconUI();
+      renderClozeActivity();
+    });
+  </script>
+</body>
+</html>
